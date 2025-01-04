@@ -1,13 +1,30 @@
 .bg-gradient {
     background: #001510;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, rgb(0, 191, 143), #001510);  /* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to bottom, #00bf8f, #001510);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #00bf8f, #001510); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .bg-gradient2 {
-    background: rgb(0, 191, 143);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #001510, rgb(0, 191, 143));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #001510, rgb(0, 191, 143)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #001510;  /* fallback for old browsers */
+background: -webkit-linear-gradient( to bottom, #001510, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background:  linear-gradient(to bottom, #001510, #000000);; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.txt{
+    transition: all linear 0.5s;
+    -webkit-text-stroke:2px #00bf8f;
+     color: transparent;}
+
+.txt:hover{
+    color: #00bf8f;
+    text-shadow: #00bf8f 0px 0px 10px;
+}
+
+.blurrycard{
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(255,255,255, 0.1), rgba(255,255,255,0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.182);
+    box-shadow: 0 8 32 0 #6a6a6a;
 }

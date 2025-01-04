@@ -3,7 +3,7 @@ import React from 'react'
 const Nav = () => {
   return (
     <div>
-      <div>hello wolrd </div>
+      {/* <div className='w-screen'>hello wolrd </div> */}
     </div>
   )
 }
