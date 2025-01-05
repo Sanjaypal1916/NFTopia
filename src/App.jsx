@@ -3,16 +3,15 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRef, useState } from 'react';
 import Marquee from 'react-fast-marquee';
-import { HiBadgeCheck, HiCurrencyRupee, HiLink, HiLockClosed, HiOutlineClipboardCheck } from "react-icons/hi";
+import { HiBadgeCheck, HiCurrencyRupee, HiLink, HiLockClosed, HiOutlineClipboardCheck, HiOutlineQrcode } from "react-icons/hi";
 import './App.css';
 import myimage from './assets/SVG.png';
 import Blurrybox from './Components/Blurrybox';
 
-import { HiOutlineQrcode } from "react-icons/hi";
-
 function App() {
   const [count, setCount] = useState(0)
 
+  const scrollref = useRef()
   const useref = useRef(null)
   const textRef = useRef(null); // Create a ref for the moving text
 
@@ -26,6 +25,8 @@ function App() {
     }
     )
   }, [])
+
+
 
 
 
@@ -45,6 +46,25 @@ function App() {
         // yoyo:true
       }
     );
+
+    gsap.from(scrollref.current.children, {
+      scrollTrigger: {
+        trigger: scrollref.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+        markers: true,
+        toggleActions: 'play none none reverse'
+      },
+      y: 100,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 1
+    })
+
+
+
+
   }, []);
 
 
@@ -119,13 +139,13 @@ function App() {
               <h4 className='txt text-9xl  mr-10'>Innovative</h4>
             </Marquee>
 
-            <div className='w-3/4 grid grid-cols-2 gap-4 h-fit max-h-fit mx-auto mt-14'>
-            <Blurrybox Icon={HiBadgeCheck} content={'Dive into a world where blockchain technology powers fair gameplay, secure transactions, and exciting rewards for card game enthusiasts.'}></Blurrybox>
-            <Blurrybox Icon={HiCurrencyRupee} content={'Unleash the potential of digital ownership by trading cards, competing in thrilling matches, and winning rewards that truly belong to you.'}></Blurrybox>
-            <Blurrybox Icon={HiLockClosed} content={'Experience the future of card games, combining blockchain transparency with captivating gameplay. Build, strategize, and dominate the competition.'}></Blurrybox>
-            <Blurrybox Icon={HiLink} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
-            <Blurrybox Icon={HiOutlineClipboardCheck} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
-            <Blurrybox Icon={HiOutlineQrcode} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
+            <div className='w-3/4 grid grid-cols-2 gap-6 h-fit max-h-fit mx-auto mt-14' ref={scrollref}>
+              <Blurrybox className="stagger" Icon={HiBadgeCheck} content={'Dive into a world where blockchain technology powers fair gameplay, secure transactions, and exciting rewards for card game enthusiasts.'}></Blurrybox>
+              <Blurrybox className="stagger" Icon={HiCurrencyRupee} content={'Unleash the potential of digital ownership by trading cards, competing in thrilling matches, and winning rewards that truly belong to you.'}></Blurrybox>
+              <Blurrybox className="stagger" Icon={HiLockClosed} content={'Experience the future of card games, combining blockchain transparency with captivating gameplay. Build, strategize, and dominate the competition.'}></Blurrybox>
+              <Blurrybox className="stagger" Icon={HiLink} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
+              <Blurrybox className="stagger" Icon={HiOutlineClipboardCheck} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
+              <Blurrybox className="stagger" Icon={HiOutlineQrcode} content={'Say goodbye to fraud and unfair play. Our blockchain foundation ensures every move is secure, every card is traceable, and every win is yours.'}></Blurrybox>
             </div>
 
 
@@ -134,8 +154,47 @@ function App() {
         </div>
 
 
-        <div className='container h-screen bg-gradient2 '>
+        <div className='container h-screen bg-gradient3 '>
           
+          <div className='w-2/3 h-5/6 m-auto p-3 '>
+            <div className='w-full h-1/6 mx-auto rounded-lg text-center justify-center p-3'>
+              <h1 className=' txt text-7xl whitespace-nowrap font-bold rounded-lg '>
+                About Us
+              </h1>
+            </div>
+
+            <div className='w-full h-full flex flex-row'>
+              <div className='w-1/4 h-5/6  '>
+
+                <div className='card h-2/5 rounded-lg my-4 p-3 flex justify-center items-center '>
+                  <img className="  rounded-full h-auto w-auto" src={myimage} alt="" />
+                </div>
+
+                <div className='card h-3/5  rounded-lg my-4 p-3 justify-center items-center  text-white  overflow-y-scroll scrollbar-hide'>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste minima blanditiis, facilis aut magni assumenda, ad similique tempora molestiae delectus quas dolores nisi animi deleniti aliquam fuga rerum, voluptate harum. Saepe provident molestias sed quod magni voluptate laudantium? Quisquam v Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quod accusantium dolorum impedit deserunt esse architecto provident? Cumque eius nam voluptas nostrum est similique ea, debitis deserunt consequuntur amet, deleniti sunt aliquam. Non atque ipsa assumenda odit minus officiis, nulla doloremque quos eligendi est doloribus molestias maiores enim cupiditate laudantium itaque deserunt at odio quas accusantium. Nostrum veniam libero quis sequi autem impedit delectus nesciunt molestias laudantium repellendus adipisci, voluptatum reiciendis iste harum nisi cupiditate cum. Doloremque, est aliquid. Doloribus, alias dicta!
+                  </p>
+                </div>
+
+              </div>
+
+              <div className='w-3/4 h-5/6 '>
+
+                <div className='card h-3/5  rounded-lg m-4 p-3  text-white overflow-y-scroll scrollbar-hide'>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus culpa reprehenderit quos ipsum, eius optio voluptates veritatis labore harum! Quos voluptatibus inventore, iste placeat ea cum dolore in? Delectus, eligendi! Delectus saepe ab cumque earum velit, nam possimus? Molestiae illo eius recusandae optio, deserunt autem, molestias ab id aliquam exercitationem voluptas in atque odit saepe vitae tenetur magnam est unde esse excepturi alias dolores tempora facilis quas. Voluptatum veniam delectus quos et necessitatibus provident blanditiis commodi. ipsum dolor sit amet, consectetur adipisicing elit. Iste minima blanditiis, facilis aut magni assumenda, ad similique tempora molestiae delectus quas dolores nisi animi deleniti aliquam fuga rerum, voluptate harum. Saepe provident molestias sed quod magni voluptate laudantium? Quisquam v Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero laborum impedit assumenda voluptas fugit non quo architecto incidunt perferendis enim tenetur asperiores natus placeat sit, inventore, corrupti
+                  </p>
+                </div>
+
+                <div className=' card h-2/5  rounded-lg m-4 p-3 whitespace-normal text-wrap overflow-y-scroll text-white scrollbar-hide'>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore error laudantium quasi facilis alias eligendi reiciendis quae necessitatibus corporis quod sunt repellendus, dolorem laboriosam? Possimus repellat maxime, sit nulla aut sed totam laboriosam corporis minus dolores esse aliquid provident, cumque dolorem itaque! Earum perspiciatis quaerat adipisci! Incidunt id, voluptas deleniti debitis animi molestiae quibusdam porro distinctio nesciunt necessitatibus, ad eveniet?
+                </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
 
         </div>
