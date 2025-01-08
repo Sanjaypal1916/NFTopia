@@ -19,7 +19,8 @@ background:  linear-gradient(to bottom, #000000, #00523f);; /* W3C, IE 10+/ Edge
 .txt{
     transition: all linear 0.5s;
     -webkit-text-stroke:2px #00bf8f;
-     color: transparent;}
+     color: transparent;
+    }
 
 .txt:hover{
     color: #00bf8f;
@@ -54,4 +55,13 @@ background:  linear-gradient(to bottom, #000000, #00523f);; /* W3C, IE 10+/ Edge
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.182);
     box-shadow: 0 8 32 0 #6a6a6a;
+}
+
+.nav{
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(255,255,255, 0.1), rgba(255,255,255,0.1));
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 8 32 0 #6a6a6a;
+    
 }

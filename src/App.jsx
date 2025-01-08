@@ -4,9 +4,11 @@ import { gsap } from 'gsap';
 import { useRef, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import { HiBadgeCheck, HiCurrencyRupee, HiLink, HiLockClosed, HiOutlineClipboardCheck, HiOutlineQrcode } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 import './App.css';
 import myimage from './assets/SVG.png';
 import Blurrybox from './Components/Blurrybox';
+import Nav from "./Components/Nav";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -92,9 +94,9 @@ function App() {
   return (
     <>
       <div className='container h-fit'>
+      <Nav/>
 
         <div className='container h-fit  flex-row flex justify-center items-center bg-gradient '>
-
           <div className='h-full w-3/5 mx-2 '>
 
             <h1 className='text-6xl whitespace-pre-wrap font-bold text-gray-100 w-4/5 m-0 pt-52 ml-40 '>
@@ -104,7 +106,7 @@ function App() {
             <p className='text-1xl  font-sans text-gray-100 w-2/3 m-0  ml-40 whitespace-normal mt-4'>Explore a world of creativity with exclusive NFTs from artists around the globe. Buy, sell, and trade NFTs securely on our trusted platform. Empowering creators and collectors with transparent, decentralized ownership.</p>
 
 
-            <button ref={useref} onMouseEnter={sizegrow} onMouseLeave={sizeshrink} className='rounded-xl border-2 border-customGreen px-12 py-2  mt-7 ml-40 text-pretty text-xl hover:bg-customGreen hover:text-black text-gray-50 ' style={{ borderRadius: '50px' }}>Getting Started</button>
+            <button ref={useref} onMouseEnter={sizegrow} onMouseLeave={sizeshrink} to="/login" className='rounded-xl border-2 border-customGreen px-12 py-2  mt-7 ml-40 text-pretty text-xl hover:bg-customGreen hover:text-black text-gray-50 ' style={{ borderRadius: '50px' }}><Link to={"/login"}>Getting Started</Link></button>
 
           </div>
 
@@ -116,7 +118,7 @@ function App() {
 
         </div>
 
-        <div className='container h-screen bg-gradient2 '>
+        <div className='container h-screen bg-gradient2  '>
           <div className="relative w-full overflow-hidden">
             <Marquee autoFill speed={150} direction='left' className="txt whitespace-nowrap  h-40 font-bold overflow-hidden">
               <h4 className='txt text-9xl  mr-10'>Decentralized </h4>
@@ -194,6 +196,11 @@ function App() {
 
               </div>
             </div>
+          </div>
+
+          <div className='mt-20  justify-center text-center px-48 items-center text-gray-400 '>
+            <hr className='border-gray-400'/>
+            <p className='mt-2'>sanjaypal606060@gmail.com</p>
           </div>
 
 
