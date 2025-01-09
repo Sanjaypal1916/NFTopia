@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
+import GarbageX from './Pages/GarbageX';
 import Login from './Pages/Login';
 
 const Router = createBrowserRouter([
@@ -14,6 +15,11 @@ const Router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+
+  {
+    path:"/garbage",
+    element: <GarbageX/>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

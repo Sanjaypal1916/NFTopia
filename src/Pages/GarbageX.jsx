@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import "../App.css";
 import Nav from "../Components/Nav";
 
-const Login = () => {
+const GarbageX = () => {
 
 
- const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -24,14 +24,10 @@ const Login = () => {
   };
 
 
-
-
-
-
   return (
-
+    
     <div onMouseMove={handleMouseMove}
-        className="relative h-screen w-screen bg-gradient3 overflow-hidden flex justify-center ">
+        className="relative h-screen w-screen bg-gradient3 overflow-hidden">
     
         <Nav/>
 
@@ -44,25 +40,12 @@ const Login = () => {
         ></div>
 
         
-        <div className='nav w-1/3 h-3/4  top-32 z-50 absolute  rounded-3xl'>
-        
-        <div>
-
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </div>
+    <div className='nav w-1/3 h-1/2  z-50 absolute top-1/2 left-1/2 rounded-3xl'></div>
 
     
     </div>
-  )
+
+);
 }
 
-export default Login
+export default GarbageX
